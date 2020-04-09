@@ -53,6 +53,12 @@ Finally, they sort the TFBS for each TF by coordinate.
     * Why is Hint-seq useful? -> ATAC-seq allows the detection of open chromatin by identifying genomic intervals with many reads. However, the presence of TFs bound to DNA prevent the enzyme from cleavage in an otherwise nuclesome-free region, which leaves small regions, **aka footprints, where read coverage suddenly drops within peak region of high coverage**.
     * What Hint-seq needs as input? -> a give open chromatin library and a reference genome sequence G with length N. 
     * Steps summary: First, genomic cleavage signal are generated from raw seq libraries after filtering reads by fragment size, correction of cleavage bias and signal normalization. Second, cleavage are given as input to a HMM, which segment the signal and finds the local of footprints.
+    * How does it work in detail?
+      1. Cleavage event counting and correction of seq bias: Given ATAC-seq read aligned with start position i, HINT considers the postion i+4 (because the middle of Tn5 claevage event is the fifth base after the fragment start) as a cleavage event for forward reads and i-5 for reverse reads. Next, the correction of the cleavage event profiles by sequence-specific cleavate bias considering the word w[i] with size k around genomic position i. 
+      2. k-mer-based estimation: the most common approach for bias estimation is to use freq of k-mers to estimate the probability p(w|obs). 
+      3. PWM-based estimation: and alternative approach to calculate bias estimation. p(w|obs).
+      4. PDM-based estimation: yet another approach to calucate bias estimation using a given multiset W, to estimate p(wj).
+      5. HMM training and decoding: they take the previously describe multivariate cleavage signals X as input for HMM model. 
 3. Not so clear, refer to **2 papers**: Ucar et al., 2017 GEM. Moskowits et al., 2017 Science immunology. 
 
 4. Firstly, from RNA-seq produce DE genes for clusters (assuming Cell type A, Cell type B). Secondly, from ATAC-seq produce differential accessible regulatory peaks (based on regulatorypeaks for expressed transcript whole data set), so that we can have list of genes from  Cell type A/B which are more accessible. Finally, project the result from two analyses and perform Mogrify like prediction. 
