@@ -1,0 +1,19 @@
+TY  - JOUR
+AU  - Madhamshettiwar, Piyush B.
+AU  - Maetschke, Stefan R.
+AU  - Davis, Melissa J.
+AU  - Reverter, Antonio
+AU  - Ragan, Mark A.
+PY  - 2012
+DA  - 2012/05/01
+TI  - Gene regulatory network inference: evaluation and application to ovarian cancer allows the prioritization of drug targets
+JO  - Genome Medicine
+SP  - 41
+VL  - 4
+IS  - 5
+AB  - Altered networks of gene regulation underlie many complex conditions, including cancer. Inferring gene regulatory networks from high-throughput microarray expression data is a fundamental but challenging task in computational systems biology and its translation to genomic medicine. Although diverse computational and statistical approaches have been brought to bear on the gene regulatory network inference problem, their relative strengths and disadvantages remain poorly understood, largely because comparative analyses usually consider only small subsets of methods, use only synthetic data, and/or fail to adopt a common measure of inference quality.
+SN  - 1756-994X
+UR  - https://doi.org/10.1186/gm340
+DO  - 10.1186/gm340
+ID  - Madhamshettiwar2012
+ER  - 
